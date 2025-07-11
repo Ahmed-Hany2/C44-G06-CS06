@@ -57,6 +57,20 @@ namespace Assignment
             Console.WriteLine($"Omar After ModifyString(Passing by reference): {name2}");
 
             #endregion
+
+            #region Question (3)
+            //3 - Write a c# Function that accept 4 parameters from user and
+            //return result of summation and subtracting of two numbers
+            int x=10, y=20, sumResult, subResult;
+            static void Calculate(int a, int b, out int sum, out int sub)
+            {
+                sum = a + b;
+                sub = a - b;
+            }
+            Calculate(x, y, out sumResult, out subResult);
+            Console.WriteLine($"Sum of {x} and {y} is: {sumResult}");
+            Console.WriteLine($"Subtraction of {x} and {y} is: {subResult}");
+            #endregion
         }
     }
 }
