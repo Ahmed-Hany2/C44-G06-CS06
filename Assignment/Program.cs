@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment
 {
@@ -150,6 +152,33 @@ namespace Assignment
             MinMaxArray(numbers, out minValue, out maxValue);
             Console.WriteLine($"Minimum value in the array: {minValue}");
             Console.WriteLine($"Maximum value in the array: {maxValue}");
+            #endregion
+
+            #region Question (7)
+            //7 - Create function to calculate the factorial of the number specified as parameter
+            static int Factorial(int num)
+            {
+                int sum = 1;
+                if (num < 0)
+                {
+                    return -1; 
+                }
+                else if (num == 0 || num == 1)
+                    return 1;
+                else
+                {
+                    for (int i = 1; i <= num; i++)
+                        sum *= i;  
+                    return sum;
+                }
+            }
+            Console.Write("Enter a number to calculate its factorial: ");
+            int factorialNumber = int.Parse(Console.ReadLine() ?? "0");
+            int factorialResult = Factorial(factorialNumber);
+            if (factorialResult == -1)
+                Console.WriteLine("Factorial is not defined for negative numbers.");
+            else
+                Console.WriteLine($"The factorial of {factorialNumber} is: {factorialResult}");
             #endregion
         }
     }
