@@ -125,6 +125,32 @@ namespace Assignment
                 Console.WriteLine($"{primeNumber} is not a prime number.");
             }
             #endregion
+
+            #region Question (6)
+            //6 - Create a function named MinMaxArray, to return the minimum and
+            //maximum values stored in an array, using reference parameters
+            static void MinMaxArray(int[] array ,out int min, out int max)
+            {
+                min = array[0];
+                max = array[0];
+                for ( int i=0; i<array.Length; i++)
+                {
+                    if (array[i] > max)
+                    {
+                        max = array[i];
+                    }
+                    if (array[i] < min)
+                    {
+                        min = array[i];
+                    }
+                }
+            }
+            int [] numbers = { 3, 5, 1, 8, 2 };
+            int minValue, maxValue;
+            MinMaxArray(numbers, out minValue, out maxValue);
+            Console.WriteLine($"Minimum value in the array: {minValue}");
+            Console.WriteLine($"Maximum value in the array: {maxValue}");
+            #endregion
         }
     }
 }
