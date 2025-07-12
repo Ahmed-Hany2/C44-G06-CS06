@@ -73,6 +73,15 @@
         }
         #endregion
 
+        #region video 6 (passing by out)
+        public static void SumMulti(int x, int y, out int sum, out int multi)
+        {
+            sum = x + y;
+            multi = x * y;
+        }
+        #endregion
+
+
         static void Main(string[] args)
         {
 
@@ -111,6 +120,13 @@
             Console.WriteLine("After HashCode [outside]: " + numbers2.GetHashCode());
             Console.WriteLine($"Item [outside] {numbers2[0]}");
 
+            #endregion
+
+            #region video 6 (passing by out)
+            int X = 10, Y = 20, sum, multi;
+            SumMulti(X, Y, out sum, out multi);
+            Console.WriteLine($"sum: {sum}");
+            Console.WriteLine($"Multi: {multi}");
             #endregion
         }
     }
