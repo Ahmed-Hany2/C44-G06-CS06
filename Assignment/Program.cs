@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Xml.Linq;
 
 namespace Assignment
 {
@@ -93,6 +94,36 @@ namespace Assignment
             int number = int.Parse(Console.ReadLine() ?? "0");
             int sumOfDigits = SumOfDigits(number);
             Console.WriteLine($"The sum of the digits of the number {number} is: {sumOfDigits}");
+            #endregion
+
+            #region Question (5)
+            //5 - Create a function named "IsPrime", which receives an integer number
+            //and retuns true if it is prime, or false if it is not:
+            static bool IsPrime(int num)
+            {
+                if (num <= 1) return false;
+                int i = num-1;
+                int sum = 0;
+                while(i > 1)
+                {
+                    if(num % i == 0)
+                        sum++;
+                    i--;
+                }
+                return sum == 0;
+
+            }
+            Console.Write("Enter a number to check if it's prime: ");
+            int primeNumber = int.Parse(Console.ReadLine() ?? "0");
+            bool isPrime = IsPrime(primeNumber);
+            if (isPrime)
+            {
+                Console.WriteLine($"{primeNumber} is a prime number.");
+            }
+            else
+            {
+                Console.WriteLine($"{primeNumber} is not a prime number.");
+            }
             #endregion
         }
     }
