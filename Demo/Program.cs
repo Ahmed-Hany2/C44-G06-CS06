@@ -186,6 +186,15 @@
             string? name = null;
             Console.WriteLine(name);
             #endregion
+
+            #region video 11 (Null Propagation OPerator)
+            int[] numbers4 = default;
+            for(int i=0; i<numbers4?.Length; i++)
+            {
+                Console.WriteLine(numbers4[i]);
+            }
+
+            #endregion
         }
     }
 }
