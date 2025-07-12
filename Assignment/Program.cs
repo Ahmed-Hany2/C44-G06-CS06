@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Buffers.Text;
+using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
@@ -179,6 +180,30 @@ namespace Assignment
                 Console.WriteLine("Factorial is not defined for negative numbers.");
             else
                 Console.WriteLine($"The factorial of {factorialNumber} is: {factorialResult}");
+            #endregion
+
+            #region Question (8)
+            //8 - Create a function named "ChangeChar" to modify a letter in a certain
+            //position(0 based) of a string, replacing it with a different letter
+            static string ChangeChar(string str, int position, char newChar)
+            {
+                if (position < 0 || position >= str.Length)
+                {
+                    Console.WriteLine("Position is out of range.");
+                }
+                char[] charArray = str.ToCharArray();
+                charArray[position] = newChar;
+                return new string(charArray);
+            }
+            Console.Write("Enter a string: ");
+            string inputString = Console.ReadLine() ;
+            Console.Write("Enter the position of the character to change : ");
+            int charPosition = int.Parse(Console.ReadLine() ?? "0");
+            Console.Write("Enter the new character: ");
+            char newCharacter = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            string modifiedString = ChangeChar(inputString, charPosition, newCharacter);
+            Console.WriteLine($"Modified string: {modifiedString}");
             #endregion
         }
     }
