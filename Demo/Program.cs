@@ -16,12 +16,30 @@
         }
         #endregion
 
+        #region video 2 ( function prameters (passing by value) )
+        public static void Swap(int a, int b)
+        {
+            Console.WriteLine($"Before Swapping [Inside]: a = {a}, b = {b}");
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine($"After Swapping [Inside]: a = {a}, b = {b}");
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
             #region Functions (prototype)
             PrintShape1();
             PrintShape2(count: 20, shape: "%^");
+            #endregion
+
+            #region video 2 ( function prameters (passing by value) )
+            int x = 10, y = 20;
+            Console.WriteLine($"Before Swapping [Outside]: x = {x}, y = {y}");
+            Swap(x, y);
+            Console.WriteLine($"After Swapping [Outside]: x = {x}, y = {y}");
             #endregion
 
         }
