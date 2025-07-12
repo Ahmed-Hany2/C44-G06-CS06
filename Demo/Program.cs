@@ -81,6 +81,23 @@
         }
         #endregion
 
+        #region video 7 (passing by params)
+        public static int SumArray3(params int[] array)
+        {
+            Console.WriteLine("Before HashCode [Inside]: " + array.GetHashCode());
+            array[0] = 100;
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+
+            Console.WriteLine("After HashCode [Inside]: " + array.GetHashCode());
+            Console.WriteLine($"Item [Inside] {array[0]}");
+            return sum;
+        }
+        #endregion
+
 
         static void Main(string[] args)
         {
@@ -127,6 +144,11 @@
             SumMulti(X, Y, out sum, out multi);
             Console.WriteLine($"sum: {sum}");
             Console.WriteLine($"Multi: {multi}");
+            #endregion
+
+            #region video 7 (passing by params)
+            int sum3 = SumArray3(10, 20, 30, 40, 50);
+            Console.WriteLine(sum3);
             #endregion
         }
     }
