@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.Metrics;
 
 namespace Assignment
 {
@@ -70,6 +71,28 @@ namespace Assignment
             Calculate(x, y, out sumResult, out subResult);
             Console.WriteLine($"Sum of {x} and {y} is: {sumResult}");
             Console.WriteLine($"Subtraction of {x} and {y} is: {subResult}");
+            #endregion
+
+            #region Question (4)
+            //4 - Write a program in C# Sharp to create a function to calculate the sum of the
+            //individual digits of a given number.
+            //Output should be like
+            //Enter a number: 25
+            //The sum of the digits of the number 25 is: 7
+            int SumOfDigits(int number)
+            {
+                int sum = 0;
+                while (number > 0)
+                {
+                    sum += number % 10; 
+                    number /= 10;       
+                }
+                return sum;
+            }
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine() ?? "0");
+            int sumOfDigits = SumOfDigits(number);
+            Console.WriteLine($"The sum of the digits of the number {number} is: {sumOfDigits}");
             #endregion
         }
     }
