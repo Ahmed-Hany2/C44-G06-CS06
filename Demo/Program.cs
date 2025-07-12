@@ -99,6 +99,7 @@
         #endregion
 
 
+
         static void Main(string[] args)
         {
 
@@ -149,6 +150,17 @@
             #region video 7 (passing by params)
             int sum3 = SumArray3(10, 20, 30, 40, 50);
             Console.WriteLine(sum3);
+            #endregion
+
+            #region video 8 (Boxing & unboxing)
+            int z = 10;
+            object obj = z;
+
+            // ======================================
+            //obj = new Person();
+            z = (int)obj;
+            Console.WriteLine(z);
+
             #endregion
         }
     }
