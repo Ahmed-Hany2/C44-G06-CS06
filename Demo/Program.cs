@@ -55,6 +55,24 @@
         }
         #endregion
 
+        #region video 5 ( reference-type (passing by reference) )
+        public static int SumArray2(ref int[] array)
+        {
+            Console.WriteLine("Before HashCode [Inside]: " + array.GetHashCode());
+            array = [50, 60 , 70, 80];
+            int sum = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            
+            Console.WriteLine("After HashCode [Inside]: " + array.GetHashCode());
+            Console.WriteLine($"Item [Inside] {array[0]}");
+            return sum;
+           
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -83,6 +101,16 @@
             Console.WriteLine("Result: " + result);
             Console.WriteLine("After HashCode [outside]: " + numbers.GetHashCode());
             Console.WriteLine($"Item [outside] {numbers[0]}");
+            #endregion
+
+            #region video 5 ( reference-type (passing by reference) )
+            int[] numbers2 = [1, 3, 5, 7, 9];
+            Console.WriteLine("Before HashCode [outside]: " + numbers2.GetHashCode());
+            int result2 = SumArray2(ref numbers2);
+            Console.WriteLine("Result: " + result2);
+            Console.WriteLine("After HashCode [outside]: " + numbers2.GetHashCode());
+            Console.WriteLine($"Item [outside] {numbers2[0]}");
+
             #endregion
         }
     }
