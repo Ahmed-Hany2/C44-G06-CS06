@@ -27,6 +27,17 @@
         }
         #endregion
 
+        #region video 3 ( function prameters (passing by reference) )
+        public static void Swap2(ref int a, ref int b)
+        {
+            Console.WriteLine($"Before Swapping [Inside]: a = {a}, b = {b}");
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine($"After Swapping [Inside]: a = {a}, b = {b}");
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -39,6 +50,12 @@
             int x = 10, y = 20;
             Console.WriteLine($"Before Swapping [Outside]: x = {x}, y = {y}");
             Swap(x, y);
+            Console.WriteLine($"After Swapping [Outside]: x = {x}, y = {y}");
+            #endregion
+
+            #region video 3 ( function prameters (passing by reference) )
+            Console.WriteLine($"Before Swapping [Outside]: x = {x}, y = {y}");
+            Swap2(ref x, ref y);
             Console.WriteLine($"After Swapping [Outside]: x = {x}, y = {y}");
             #endregion
 
