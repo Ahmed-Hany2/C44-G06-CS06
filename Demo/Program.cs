@@ -162,6 +162,25 @@
             Console.WriteLine(z);
 
             #endregion
+
+            #region video 9 (Nullable value-type)
+            int? W = 10;
+            int? F = 9; 
+            int A;
+            // int A = W;  (error)
+            if (W.HasValue)
+                A = W.Value;
+            else
+                A = 0;
+            Console.WriteLine(A);
+
+            A = W.HasValue ? W.Value : 0;
+
+            A = W ?? F ?? 0;
+
+            Console.WriteLine(A);
+
+            #endregion
         }
     }
 }
