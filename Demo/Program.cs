@@ -181,6 +181,11 @@
             Console.WriteLine(A);
 
             #endregion
+
+            #region video 10 (Nullable reference-type)
+            string? name = null;
+            Console.WriteLine(name);
+            #endregion
         }
     }
 }
